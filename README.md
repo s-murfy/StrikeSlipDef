@@ -16,7 +16,8 @@ Conventions:
     z : vertical displacement  (positive in up direction)
 
 
-**Input files**
+## Input files
+
 Input file for StrikeSlipDef entitled 'input_file.txt' in this the input parameters are:
 
 depth :             Depth to top of slipping cells
@@ -35,8 +36,8 @@ fault_file :        name of file containing discritized fault trace
 tekr_lon, tekr_lat: location where surface displacement is calculated.
                     Unit: Degrees
 
-
-Four files are produced by StrikeSlipDef, all filenames contain the depth of the source
+## Output
+Three files are produced by StrikeSlipDef, all filenames contain the depth of the source
 in place of the asterisk  :
 
 obs_tekr_\*.dat     : contains the surface displacement at position  pzn_lon,pzn_lat due to 1m shear dislocation at each source.
@@ -57,11 +58,13 @@ fault_latlon.txt:   file containing geographical coordinates of the corners for 
                     long1, lat1, depth1, long2, lat2, depth2, long3, lat3, depth3, long4, lat4, depth4, strike
 
 
-**Postprocessing:**
+## Postprocessing:
+
 Matlab script plot_results.m reads output from StrikeSlipDef and produces figures
 
 
-**References**
+## References
+
 Şengör, A. M. C. et al. The geometry of the North Anatolian transform fault
 in the Sea of Marmara and its temporal evolution: implications for the development
 of intracontinental transform faults. Canadian Journal of Earth Sciences 51, 222-242 (2014)
