@@ -29,8 +29,6 @@ all:$(EXEC)
 
 main.o: georef.o initiation.o okada_sub.o stiffness.o
 main: georef.o initiation.o okada_sub.o stiffness.o
-#	main.o:constants.o georef.o utils.o initiation.o okada_sub.o stiffness.o
-#	main:constants.o georef.o utils.o initiation.o okada_sub.o stiffness.o
 
 %: %.o
 	$(FC) $(FCFLAGS) -o $@ $^ $(LIB)
