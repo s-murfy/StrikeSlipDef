@@ -1,0 +1,9 @@
+&PARAMETERS
+depth=14000.d0,
+rake=180.d0,
+slipping_width = 2000.d0
+fault_file='fault_trace_coordinates.txt' /
+
+&OBSERVATIONS
+tekr_lon = 27.496,
+tekr_lat = 40.958    /
