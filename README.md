@@ -1,7 +1,4 @@
 # StrikeSlipDef
-
-Calculation of deformation due to a slowly propagating source
-
 This programme calculates the displacement due to a propagating dislocation in an elastic half space. StrikeSlipDef then creates cells from this finely discritizes fault trace assigning a width to the slipping surface that is user defined as is the depth. The code then calculates the surface displacment at given location using Okada(1992) subroutine for each cell. Note: the contributions from each event are not summed together, this is done later in the post-processing step.  StrikeSlipDef reads in an input file and produces outputs 3 files which are detailed below. StrikeSlipDef can be found and compiled in the src folder using the makefile.
 
 StrikeSlipDef makes the following assumptions:
