@@ -105,11 +105,9 @@ subroutine output(obs,fname,N_sources)
      y = real(obs%y(i)+obs%y0)
 
      call convgeoutm(lat,lon,obs%latref,obs%lonref,x,y,-1)
-     ! lat = lat*rad2deg
-     ! lon = lon*rad2deg
 
-!save to file lat/Long/depth/pressure/surface
-    write(14,*) lon,lat,obs%z(i),obs%p(i,j),obs%ux(i,j),obs%uy(i,j),obs%uz(i,j)
+!save to file lat/Long/depth/surface
+    write(14,*) lon,lat,obs%z(i),obs%ux(i,j),obs%uy(i,j),obs%uz(i,j)
   enddo
  close(14)
 enddo
@@ -149,6 +147,7 @@ real :: latref,lonref
 real :: tekr_lon, tekr_lat
 double precision :: ref_x0,ref_y0
 double precision :: rake, slipping_width
+double precision :: bary_x,bary_y
 integer :: N_sources
 double precision :: slat2,slon2,slat1,slon1,stk,sdw,sdl,sdip,sstk
 type(source_type) :: source
@@ -300,10 +299,13 @@ do i = 1,N_sources
       call convgeoutm(lat3,lon3,latref,lonref,real(x3dash),real(y3dash),-1)
       call convgeoutm(lat4,lon4,latref,lonref,real(x4dash),real(y4dash),-1)
 
+      bary_x = (x1dash+x2dash+x3dash+x4dash)/4.d0
+      bary_y = (y1dash+y2dash+y3dash+y4dash)/4.d0
+
       write(55,*) lon1,lat1,d1dash,         &
                   lon2,lat2,d2dash,         &
                   lon3,lat3,d3dash,         &
-                  lon4,lat4,d4dash,source%strike(i) !source%slip(i)
+                  lon4,lat4,d4dash,source%strike(i),bary_x,bary_y
 
 enddo
 
